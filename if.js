@@ -1,3 +1,5 @@
+'use strict';
+
 var x = 15;
 if (x >= 10) {
   console.log('変数は１０以上です');
@@ -24,8 +26,7 @@ if(x === 1) {
 }
 
 // switch
-var rank = '
-';
+var rank = '';
 switch(rank) {
   case 'A' :
   console.log('Aランクです');
@@ -36,4 +37,31 @@ switch(rank) {
   default :
   console.log('ランク外です');
   break;
+}
+
+// for
+for (var x = 8; x < 10; x++) {
+  console.log('xの値は' + x);
+}
+// for in
+var data = { apple:150, orange:100, banana:120};
+for(var key in data) {
+  console.log(key + '=' + data[key]);
+}
+
+// for..of
+var data = [ 'apple','orange', 'banana' ];
+Array.prototype.hoge = function() {}
+for (var value of data) {
+  console.log(value);
+}
+
+// try catch finally
+var i = 1;
+try{
+  i = i * j;
+} catch(e) {
+  console.log(e.message);
+} finally {
+  console.log('処理は完了しました');
 }
