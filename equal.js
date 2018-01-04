@@ -1,4 +1,3 @@
-// ？
 var x = 1;
 var y = x;
 x = 2;
@@ -21,3 +20,21 @@ let {price, title,memo = 'なし'} = book;
 console.log(title);
 console.log(price);
 console.log(memo);
+
+// 条件演算子
+var x = 60;
+console.log((x >= 70) ? '合格' : '不合格');
+
+// ショートカット演算子
+var x = 1;
+if(x === 1) { console.log('こんにちわ0'); }
+x === 1 && console.log('こんにちわ1');
+x === 1 || console.log('こんにちわ2');
+
+var msg = '';
+msg = msg || 'こんにちわ、世界！';
+console.log(msg);
+
+var ary = ['java', 'ruby', 'python'];
+console.log(delete ary[0]);
+console.log(ary);
