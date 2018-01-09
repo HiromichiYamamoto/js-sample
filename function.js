@@ -46,6 +46,8 @@ function factorial(n) {
 }
 console.log(factorial(5));
 
+
+
 function arrayWalk(data,f) {
   for (var key in data) {
     f(data[key], key);
@@ -81,3 +83,35 @@ function hoge() {
 hoge.call(null);
 hoge.call(obj1);
 hoge.call(obj2);
+
+// プロトタイプチェーン
+var Animal = function() {};
+
+Animal.prototype = {
+  walk : function() {
+    console.log('トコトコ');
+  }
+};
+var Dog = function() {
+  Animal.call(this);
+};
+Dog.prototype = new Animal();
+Dog.prototype.bark = function() {
+  console.log('わんわん');
+}
+var d = new Dog();
+d.walk();
+d.bark();
+
+// class
+class Member {
+  constructor(firstName,lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getName() {
+    return this.lastName + this.firstName;
+  }
+}
+let m = new Member('太郎', '山田');
+console.log(m.getName());
