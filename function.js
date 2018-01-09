@@ -46,6 +46,8 @@ function factorial(n) {
 }
 console.log(factorial(5));
 
+
+
 function arrayWalk(data,f) {
   for (var key in data) {
     f(data[key], key);
@@ -58,3 +60,58 @@ function showElement(value,key) {
 
 var ary = [1,2,3,4,5];
 arrayWalk(ary,showElement);
+
+//初期化処理
+var Member = function(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.getName = function() {
+    return this.lastName + ' ' + this.firstName;
+  }
+};
+var mem = new Member('洋二', '山田');
+console.log(mem.getName());
+
+// call
+var data = 'Global data';
+var obj1 = { data: 'obj1 data'};
+var obj2 = { data: 'obj2 data'};
+
+function hoge() {
+  console.log(this.data);
+}
+hoge.call(null);
+hoge.call(obj1);
+hoge.call(obj2);
+
+// プロトタイプチェーン
+var Animal = function() {};
+
+Animal.prototype = {
+  walk : function() {
+    console.log('トコトコ');
+  }
+};
+var Dog = function() {
+  Animal.call(this);
+};
+Dog.prototype = new Animal();
+Dog.prototype.bark = function() {
+  console.log('わんわん');
+}
+var d = new Dog();
+d.walk();
+d.bark();
+
+// class
+class Member {
+  constructor(firstName,lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  getName() {
+    return this.lastName + this.firstName;
+  }
+}
+let m = new Member('太郎', '山田');
+console.log(m.getName());
