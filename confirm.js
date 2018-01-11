@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, false)
 },false);
 console.time('MyTimer');
-// タイマー
+// タイマ
 document.addEventListener('DOMContentLoaded', function () {
   //タイマー設置
   var timer = window.setInterval(
@@ -33,3 +33,9 @@ for (var i = 0, len = storage.length; i < len; i++) {
   var v = storage[k];
   console.log(k + ':' + v);
 }
+/**
+*@constructor
+*@param
+*@throws
+*@author
+*/
