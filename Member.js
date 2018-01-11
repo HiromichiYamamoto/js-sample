@@ -1,6 +1,6 @@
 /**
 *@constructor
-*@classdesc 絵mんバーについての情報を管理します。
+*@classdesc メンバーについての情報を管理します。
 *@param {string} firstName 姓
 *@param {string} lastName 名
 *@throws {Error} firstNameかlastNameが足りません。
@@ -21,5 +21,13 @@ var Member = function(firstName, lastName) {
 *@deprecated {@link Member#toString}メソッドを代わりに利用してください。
 */
 Member.prototype.getName = function() {
+  return this.lastName + ' ' + this.firstName;
+};
+
+/**
+*Memberクラスの内容を文字列化します。
+*@return {String} メンバーの氏名
+*/
+Member.prototype.toString = function() {
   return this.lastName + ' ' + this.firstName;
 };
